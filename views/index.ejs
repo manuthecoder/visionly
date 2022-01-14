@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<script src="//cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="//matifycss.manuthecoder.repl.co/src/matify.css">
+		<script src="//matifycss.manuthecoder.repl.co/src/matify.js" async></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap" rel="stylesheet">
+		<style>*{font-family: 'Work Sans', sans-serif!important;}</style>
+  </head>
+  <body>
+	<img src="https://constructinc.org/wp-content/uploads/2015/05/team-meeting-coffee-shop_small_cropped.jpeg" class="object-cover fixed top-0 left-0 w-full h-0 h-full blur-lg" style="z-index:-999;transform:scale(1.05)">
+    <div class="h-screen flex item-center flex-col justify-center bg-cover no-repeat">
+		<div class="bg-white max-w-xl mx-auto shadow-xl px-10 py-9 text-center border rounded-lg">
+			<h3 class="my-6 text-4xl">Login</h3>
+			<p class="my-5 text-xl">Log in with your Smartlist account to continue to Visionly</p>
+			<div id="loginBTN" class="my-4"></div>
+		</div>
+		</div>
+    <script>
+			class SmartlistApiButton{constructor(n,t){if(this.el=n,this.options=t,!t.appId)throw new Error("App ID not specified!");const e="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,(function(n){var t=16*Math.random()|0;return("x"==n?t:3&t|8).toString(16)}));document.head.insertAdjacentHTML("beforeend","\n<style>\n  @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');\n  .SmartlistApiButton{\n    outline: 0;\n    --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);\n    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n    font-size: 15px;\n    white-space: nowrap;\n    background: #fff;\n    max-width:100%;\n    text-overflow:ellipsis;\n    overflow:hidden;\n    width: 300px;\n    border: 1px solid #ccc;\n    color: #505050;\n    border-radius: 59999px;\n    line-height: 45px;\n    padding: 0 30px;\n    cursor: pointer;\n  }\n  .SmartlistApiButton svg {float: left;margin-top: 8px;}\n  .SmartlistApiButton:hover,.SmartlistApiButton:focus-visible {\n    background: #eee;\n    color: #303030;\n    border: 1px solid #bbb;\n    --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);\n    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n  }\n  .SmartlistApiButton:active {\n    background: #ddd;\n    border: 1px solid #303030;\n    --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);\n    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n  }\n</style>\n");const i=`\n<button class="SmartlistApiButton matify:ripple rounded-full" id="${e}">\n\t<svg style="vertical-align: middle;margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" baseProfile="tiny" overflow="inherit" version="1.2" viewBox="0 0 50 50"><path d="M8.149 16.062h6.06l-.053 3.575-6.007 5.406v-8.981zm16.758-1.979L1 35.169 3.52 38l21.485-18.954L46.486 38 49 35.169 25.097 14.083 25 14l-.093.083z"/></svg>\n\tSign in with Smartlist\n</button>\n`;n.innerHTML=i,document.getElementById(e).addEventListener("click",(()=>{if(!0===t.popup)var n=(({url:n,title:t,w:e,h:i})=>{const o=void 0!==window.screenLeft?window.screenLeft:window.screenX,r=void 0!==window.screenTop?window.screenTop:window.screenY,a=window.innerWidth?window.innerWidth:document.documentElement.clientWidth?document.documentElement.clientWidth:screen.width,s=window.innerHeight?window.innerHeight:document.documentElement.clientHeight?document.documentElement.clientHeight:screen.height,d=a/window.screen.availWidth,w=(a-e)/2/d+o,l=(s-i)/2/d+r,p=window.open(n,t,`\nscrollbars=yes,\nwidth=${e/d}, \nheight=${i/d}, \ntop=${l}, \nleft=${w}\n`);return window.focus&&p.focus(),p})({url:`https://smartlist.ga/dashboard/login.php?auth=true&appId=${t.appId}&close`,title:"xtf",w:window.innerWidth/2.5,h:window.innerHeight/2}),e=setInterval((function(){if(n.closed){if(clearInterval(e),!t.callback)throw new Error("Must specify callback if popup is enabled");t.callback(!0)}}),200);else window.location.href=`https://smartlist.ga/dashboard/login.php?auth=true&appId=${t.appId}`}))}}
+
+      var button = new SmartlistApiButton(document.getElementById('loginBTN'), {
+        appId: "c0033b5f5a4815a172984d64037dd49a8663fb8b3a71e47f11ecd332c8c3819c57e1631fdf46d66c6ff0e58763a61529fefcfa2a6675e186ee901e5452fedd94",
+        callback() {
+          /**
+           * We'll redirect to the oAuth URI with the token. Use window.close() to close the login window after authorization is complete
+           * Make sure to verify the session is valid after the popup is closed!
+           */
+          console.log("Closed popup")
+        }
+      })
+    </script>
+  </body>
+</html>

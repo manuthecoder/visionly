@@ -1,0 +1,595 @@
+{
+	"40f5888b67c748df7efba008e7c2f9d2": {
+		"projects": [
+			{
+				"name": "Smartlist",
+				"banner": "https://images.hdqwalls.com/download/future-metropolis-pn-1920x1080.jpg",
+				"url": "https://smartlist.ga",
+				"description": "Smartlist is a free home inventory app and finance manager which helps you keep track of your home's inventory, finances, and more. Create lists, and fill it up with your shopping lists, tasks, and more",
+				"visions": [
+					[
+						"vaFIOkYjqn",
+						"Work on recipe generator",
+						"web",
+						[
+							2022,
+							1,
+							1
+						],
+						[
+							2022,
+							1,
+							31
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"DiKmJ1x48J",
+						"Work on Smartlist Events",
+						"events",
+						[
+							2022,
+							2,
+							1
+						],
+						[
+							2022,
+							2,
+							28
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"2OkkaHqSnw",
+						"Work on mobile app",
+						"app",
+						[
+							2022,
+							3,
+							1
+						],
+						[
+							2022,
+							3,
+							31
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"xfzZHLkZbr",
+						"Work on infrastructure",
+						"company",
+						[
+							2022,
+							2,
+							6
+						],
+						[
+							2022,
+							2,
+							12
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"3b3VSMCVs3",
+						"Work on employee knowledge base",
+						"company",
+						[
+							"2022",
+							"02",
+							"17"
+						],
+						[
+							"2022",
+							"02",
+							"26"
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"hDDIpggjea",
+						"Fix community and add plugins",
+						"web",
+						[
+							"2022",
+							"02",
+							"10"
+						],
+						[
+							"2022",
+							"04",
+							"23"
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"so.2C0lP4Z",
+						"Work on security for web app",
+						"web",
+						[
+							2022,
+							1,
+							9
+						],
+						[
+							2022,
+							1,
+							29
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"SBBCF9JNmE",
+						"Work on recipe generator",
+						"recipe-generator",
+						[
+							2022,
+							4,
+							1
+						],
+						[
+							2022,
+							4,
+							30
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"09j0lrnOp.",
+						"Improve security for Smartlist Events",
+						"events",
+						[
+							2022,
+							3,
+							6
+						],
+						[
+							2022,
+							3,
+							26
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"3a.Jjqi77i",
+						"Patent software",
+						"company",
+						[
+							2022,
+							5,
+							1
+						],
+						[
+							2022,
+							7,
+							31
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"L1Sduh7rGO",
+						"Earn some money for Smartlist",
+						"company",
+						[
+							2022,
+							7,
+							31
+						],
+						[
+							2022,
+							8,
+							31
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"uSON0yp9nn",
+						"Work on Smartlist chrome extension",
+						"extension",
+						[
+							2022,
+							4,
+							10
+						],
+						[
+							2022,
+							4,
+							30
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"F40cuStIDr",
+						"Create Smartlist extension for every browser",
+						"extension",
+						[
+							2022,
+							4,
+							21
+						],
+						[
+							2022,
+							5,
+							31
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"nStUN7MQbb",
+						"Fix create events Smartlist Events",
+						"events",
+						[
+							2022,
+							2,
+							14
+						],
+						[
+							2022,
+							2,
+							24
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"MzyvDd5xyR",
+						"Set up donation button on GitHub",
+						"company",
+						[
+							2022,
+							8,
+							17
+						],
+						[
+							2022,
+							9,
+							15
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"lRQ6hY6DCh",
+						"Change company logo, and name",
+						"company",
+						[
+							2022,
+							1,
+							31
+						],
+						[
+							2022,
+							6,
+							29
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"uUhFd5NtWf",
+						"Work on grocery delivery service",
+						"company",
+						[
+							2023,
+							1,
+							13
+						],
+						[
+							2023,
+							12,
+							13
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"le.jiQmfSb",
+						"Work on Amazon API",
+						"web",
+						[
+							"2022",
+							"04",
+							"07"
+						],
+						[
+							2022,
+							3,
+							7
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"2jBwcIi8yQ",
+						"Work on instacart API",
+						"web",
+						[
+							2022,
+							5,
+							16
+						],
+						[
+							2022,
+							5,
+							31
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"ars9uHWJgJ",
+						"Work on grubhub API",
+						"web",
+						[
+							2022,
+							10,
+							21
+						],
+						[
+							2022,
+							10,
+							31
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"tKaRdvA4De",
+						"Create Smartlist Bank account API",
+						"web",
+						[
+							2022,
+							8,
+							1
+						],
+						[
+							2022,
+							11,
+							30
+						],
+						null,
+						0,
+						null
+					]
+				]
+			},
+			{
+				"name": "Visionly",
+				"banner": "https://images.squarespace-cdn.com/content/v1/583ed05c59cc68a8c3e45c0f/1482074282081-KQBCRLEWPLWTJKWBCR4X/vision.png?format=750w",
+				"url": "https://smartlist.ga",
+				"description": "Gantt charts",
+				"visions": [
+					{
+						"name": "Build web app"
+					}
+				]
+			},
+			{
+				"name": "Devlist",
+				"banner": "https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720__480.jpg",
+				"url": "https://devlist.rf.gd",
+				"description": "Devlist is a free developer todo list app",
+				"visions": [
+					[
+						"tes43552t",
+						"sdf",
+						"hi",
+						[
+							2022,
+							1,
+							22
+						],
+						[
+							2022,
+							1,
+							22
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"test2345",
+						"Create vision",
+						"Create vision",
+						[
+							2022,
+							2,
+							1
+						],
+						[
+							2022,
+							2,
+							21
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"test23",
+						"Create vision too",
+						"Create vision 2",
+						[
+							2022,
+							1,
+							24
+						],
+						[
+							2022,
+							2,
+							23
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"test13",
+						"34258",
+						"asdf",
+						[
+							2022,
+							1,
+							25
+						],
+						[
+							2022,
+							1,
+							31
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"test2345",
+						"dasf",
+						"adsf",
+						[
+							2022,
+							1,
+							20
+						],
+						[
+							2022,
+							1,
+							31
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"CDavI0daGF",
+						"hi there",
+						"hi there",
+						[
+							2022,
+							1,
+							13
+						],
+						[
+							2022,
+							2,
+							1
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"453Nea5iYq",
+						"hi therehi therehi therehi there",
+						"hi therehi therehi therehi there",
+						[
+							2021,
+							12,
+							30
+						],
+						[
+							2022,
+							1,
+							19
+						],
+						null,
+						0,
+						null
+					],
+					[
+						"N.09YGzZ1c",
+						"and then",
+						"1",
+						[
+							2022,
+							1,
+							4
+						],
+						[
+							2022,
+							1,
+							24
+						],
+						null,
+						0,
+						null
+					]
+				]
+			},
+			{
+				"name": "Alfred",
+				"banner": "https://i.ibb.co/GTgdS2J/5485870.png",
+				"url": "https://alfred.manuthecoder.ml",
+				"description": "Alfred is a multi-purpose discord bot",
+				"visions": [
+					[
+						"nABSxBzqRY",
+						"Work on bot",
+						"app",
+						[
+							2022,
+							1,
+							1
+						],
+						[
+							2022,
+							1,
+							31
+						],
+						null,
+						0,
+						null
+					]
+				]
+			},
+			{
+				"name": "MatifyCSS",
+				"banner": "https://i.ibb.co/ct0tP56/icon-vector-id937979564-k-6-m-937979564-s-612x612-w-0-h-Trl-YEfc-Hr-Ctm-Y4-LJ8f-Rk-Lf5-Lp-Sme-Fmp-Te.jpg",
+				"url": "https://matifycss.manuthecoder.repl.co/",
+				"description": "MatifyCSS is a Material Design CSS framework packed with components, utility classes, and more",
+				"visions": []
+			},
+			{
+				"name": "EdPoll",
+				"banner": "https://media.istockphoto.com/photos/democrat-vs-republican-poll-democratic-decision-and-primary-voting-picture-id1183053829?b=1&k=20&m=1183053829&s=170667a&w=0&h=nIaFZhna6iardyroa_mbX8cHoEBqPR82hGlPaex-xm8=",
+				"url": "https://edpoll.ga",
+				"description": "EdPoll is an educational polling app for classrooms",
+				"visions": []
+			}
+		]
+	}
+}

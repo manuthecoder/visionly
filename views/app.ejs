@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/kutty@latest/dist/alpinejs.min.js"></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp">
+		<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/kutty@latest/dist/kutty.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <title>Dashboard | Visionly</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="//matifycss.manuthecoder.repl.co/src/matify.css"
+    />
+		<script>
+			tailwind.config = {
+				darkMode: 'class',
+				theme: {
+					extend: {
+						colors: {
+							'theme': "#0e9084"
+						}
+					}
+				}
+			}
+		</script>
+    <link rel="stylesheet" href="https://kutty.netlify.app/build.css" />
+    <script src="//matifycss.manuthecoder.repl.co/src/matify.js" async></script>
+    <meta name="theme-color" content="#eee" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link
+      rel="shortcut icon"
+      href="https://i.ibb.co/GcJL52Z/ddd2a07a04aece5ef622d3c98db21d0c-modified.png"
+    />
+		<style>
+			#_chart {
+				width: 100%;
+				height: auto !important
+			}
+			.dropdown-list {
+				transition: none !important
+			}
+			#dt {transform:translateX(-50%)}
+			@media only screen and (min-width: 768px) {
+			#app {width: calc(100% - 4rem)}
+			}
+			.fadeUp {
+				animation: fadeUp .2s forwards;
+				transform: translateY(10px)
+			}
+			@keyframes fadeUp {
+				0% {transform: translateY(10px)}
+				100% {transform: translateY(0)}
+			}
+		</style>
+  </head>
+  <body class="dark:bg-gray-900">
+
+	<div class="hidden md:flex dark:bg-gray-800 lg:flex flex-col items-center w-16 h-full overflow-hidden text-gray-700 bg-gray-100 top-0 fixed left-0">
+		<a class="flex items-center justify-center mt-3" href="#">
+			<img src="https://i.ibb.co/9wBNgFq/logo-1.png" class="rounded-md w-10 h-10">
+		</a>
+		<div class="dark:border-gray-600 flex flex-col items-center mt-3 border-t border-gray-300">
+		<a class="dark:hover:bg-gray-500 dark:text-white flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300 matify:ripple" href="#/search">
+				<i class="material-icons-round">search</i>
+			</a>
+			<a class="dark:hover:bg-gray-500 dark:text-white flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300 matify:ripple" href="#/home">
+				<i class="material-icons-round">home</i>
+			</a>
+			<a class="dark:hover:bg-gray-500 dark:text-white flex items-center justify-center w-12 h-12 matify:ripple mt-2 hover:bg-gray-300 rounded" href="https://edpoll.ga/add" target="_blank">
+				<i class="material-icons-round">poll</i>
+			</a>
+			<a class="dark:hover:bg-gray-500 dark:text-white flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300 matify:ripple" href="#">
+				<i class="material-icons-round">help</i>
+			</a>
+
+		</div>
+		<div class="flex flex-col items-center mt-2 border-t border-gray-300 dark:border-gray-600">
+			<a class="dark:hover:bg-gray-500 dark:text-white flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300 matify:ripple" href="#">
+				<i class="material-icons-round">feedback</i>
+			</a>
+			<a class="dark:hover:bg-gray-500 dark:text-white flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300 matify:ripple" href="javascript:void(0)" onclick="document.documentElement.classList.toggle('dark');localStorage.setItem('dark', (document.documentElement.classList.contains('dark') ? 'true': 'false'));getHashPage();">
+				<i class="material-icons-round">dark_mode</i>
+			</a>
+			<!--<a class="dark:hover:bg-gray-500 dark:text-white flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300 matify:ripple" href="#">
+				<i class="material-icons-round">settings</i>
+			</a>
+			<a class="relative flex items-center justify-center w-12 h-12 mt-2 hover:bg-gray-300" href="#">
+				<svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+				</svg>
+				<span class="absolute top-0 left-0 w-2 h-2 mt-2 ml-2 bg-indigo-500 rounded-full"></span>
+			</a>-->
+		</div>
+		<a class="dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white flex items-center justify-center w-16 h-16 matify:ripple mt-auto bg-white hover:bg-gray-100" href="#/account">
+		<img src="<%=user.avatar%>" class="rounded-full w-10 h-10 object-cover">
+		</a>
+	</div>
+	<!-- Component End  -->
+    <div x-data="dropdown()">
+      <div
+        :class="{ 'rounded-b-none hover:bg-white rounded-b-none lg:rounded-b-none text-black  hover:text-black md:rounded-b-none sm:rounded-b-none shadow-xl': open }"
+        id="dt" class="bg-theme fixed top-5 z-10 left-0 left-1/2 shadow-lg rounded-lg h-10 text-sm w-64 bg-white hover:bg-theme hover:text-white cursor-pointer matify:ripple flex matify:ripple@light items-center px-3 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
+        x-spread="trigger"
+      >
+        <span id="currentWebsite" class="dark:text-white text-sky-700"style="color:currentColor"
+          ><div class="w-20 h-4 bg-gray-200 rounded animate-pulse"></div
+        ></span>
+        <svg
+          class="ml-auto order-2 mr-2 float-right dropdown-arrow transition-none"
+          :class="{ 'rotate-180': open }"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+      <div
+        class="z-50 dark:bg-gray-600 dropdown-list mt-2 rounded-t-none border-none rounded-b-lg w-full md:w-64 lg:w-64 p-0"
+        id="_websiteDropdown"
+        x-spread="dropdown"
+				x-position="bottom-start"
+        x-cloak
+      >
+      </div>
+    </div>
+    <div id="app" class="lg:ml-16 md:ml-16">
+		</div>
+    <script src="https://cdn.socket.io/4.4.0/socket.io.min.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
