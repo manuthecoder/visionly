@@ -7,14 +7,7 @@ let ejs = require('ejs')
 let fs = require('fs')
 var expressLayouts = require('express-ejs-layouts');
 var session = require('express-session');
-const axios = require('axios').default;
 const { exec } = require("child_process");
-
-const server = http.createServer((req, res, next) => {
-  //replace stackfame.com with your doamin name
-  res.writeHead(302, {'Location' : 'http://www.visionly.manuthecoder.ml'});
-  res.end();
-});
 
 
 function _generateId(length) {
@@ -51,7 +44,6 @@ app.get('/login', function(req, res) {
   res.render('index', {
   });
 });
-
 
 app.get('/', function(req, res) {
 	if(req.session.name) {res.redirect("/app")}
