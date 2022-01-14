@@ -172,7 +172,7 @@ function showHome() {
 
 <div x-data="drawer()">
 	<button class="w-auto bg-theme text-white rounded-lg hover:bg-teal-700 matify:ripple transition-all px-4 py-3 focus:shadow-xl flex shadow-lg outline-none oultine-none" x-spread="trigger"><i class="material-icons mr-2">add</i>Create new project</button>
-  <div class="dialog" x-spread="drawer" x-cloak>
+  <div class="dialog backdrop-blur-xl" x-spread="drawer" x-cloak>
     <div class="drawer-content dark:bg-gray-700 dark:text-white">
       <div class="dialog-header dark:border-gray-500 text-xl">Create new project
         <button type="button" class="btn btn-light btn-sm btn-icon dark:text-white dark:hover:bg-gray-600" aria-label="Close" @click="close"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
@@ -256,14 +256,14 @@ function showSite(id) {
     document.querySelector("#currentWebsite").innerHTML = res.projects[id].name;
 
     document.getElementById("app").innerHTML = `
-		<div class="flex items-center justify-center bg-gray-900" style="z-index:-1;transition-delay:1s"><img src="${
+		<div class="flex items-center justify-center dark:bg-gray-900 bg-white" style="z-index:-1;transition-delay:1s"><img src="${
       res.projects[id].banner
-    }" draggable="false" class="bg-gray-800 w-full h-96 object-cover select-none cursor-pointer transition-all" id="banner">
-		<span class="absolute right-0 top-0 text-white p-5 inline-block">
+    }" draggable="false" class="dark:bg-gray-800 bg-white w-full h-96 object-cover select-none transition-none" id="banner">
+		<span class="absolute right-0 top-0 text-white p-2 inline-block">
 
 		<div x-data="dialog()">
-				<button class="hover:bg-gray-800 p-2 w-10 h-10 rounded-full matify:ripple matify:ripple@light outline-none focus:ring hover:ring-none backdrop-blur-lg shadow-lg" x-spread="trigger"><i class="material-icons-round">settings</i></button>
-				<div class="flex dialog dialog-lg" x-spread="dialog" x-cloak>
+				<button class="hover:bg-gray-800 p-2 w-10 h-10 rounded-full matify:ripple matify:ripple@light outline-none focus:ring hover:ring-none backdrop-blur-lg shadow-lg" x-spread="trigger" id="settingsTrigger"><i class="material-icons-round">settings</i></button>
+				<div class="flex backdrop-blur-xl dialog dialog-lg" x-spread="dialog" x-cloak>
 					<div class="dialog-content p-5 dark:bg-gray-700">
 						<div class="dialog-header text-2xl dark:border-gray-600">Settings
 						<div>
@@ -302,7 +302,7 @@ function showSite(id) {
 	<div x-data="dropdown()">
 		<div class="text-right flex items-center">
 			<h5 class="text-2xl my-3 text-bold text-left"><b>Visions</b></h5>
-			<button class="outline-none focus:ring-2 active:ring-0 ring-inset w-10 h-10 hover:bg-gray-200 active:border-gray-600 text-gray-500 hover:text-gray-900 border border-transparent dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white transition-all active:transition-none flex items-center justify-center order-2 ml-auto rounded-full" id="open-color-menu" onclick="setTimeout(function() {document.getElementById('input0').focus()}, 20)" x-spread="trigger"><i class="material-icons">add</i></button>
+			<button class="outline-none focus:ring-2 active:ring-0 ring-inset w-10 h-10 hover:bg-gray-200 active:border-gray-600 text-gray-500 hover:text-gray-900 border border-transparent dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white transition-all active:transition-none flex items-center justify-center matify:ripple order-2 ml-auto rounded-full" id="open-color-menu" onclick="setTimeout(function() {document.getElementById('input0').focus()}, 20)" x-spread="trigger"><i class="material-icons">add</i></button>
 		</div>
 
 		<div class="dropdown-list border border-gray-300 shadow-xl dark:bg-gray-700 dark:border-gray-600 w-96 absolute right-8 p-4 rounded-lg" id="color-menu" x-spread="dropdown" x-cloak style="margin-top: -200px;z-index:99999" x-position="top-start">
@@ -365,7 +365,7 @@ function showSite(id) {
 					No visions yet! Click on the "+" icon to create a new vision
 				</div>			
 			`:""}
-			<div id="_chart" class="${_chartData.length==0?'hidden':''}">
+			<div id="_chart" style="width:${_chartData.length>10?"150vw":"100%"}!important" class="${_chartData.length==0?'hidden':''}">
 				<div style="height:500px" class="w-full bg-gray-200 dark:bg-gray-600 rounded-lg animate-pulse"></div>
 			</div>
 		</div>
@@ -386,7 +386,7 @@ function showSite(id) {
             e[4].getMonth() + 1
           }/${e[4].getDate()}/${e[4].getFullYear()}`}</span>
 	</button>
-  <div class="dialog items-center flex" x-spread="dialog" x-cloak>
+  <div class="dialog backdrop-blur-xl items-center flex" x-spread="dialog" x-cloak>
     <div class="dialog-content h-auto sm:h-auto rounded-lg shadow-xl dark:bg-gray-700">
       <div class="dark:border-gray-600 dialog-header flex-col my-3 text-2xl">
 				<input 
@@ -592,6 +592,14 @@ function showSite(id) {
     }
     window.prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
+			if(window.location.hash.includes("/sites")){
+				if(document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+					document.getElementById("banner").style.filter=`blur(${document.body.scrollTop/2 || document.documentElement.scrollTop/2}px)`
+				}
+				else {
+					document.getElementById("banner").style.filter=""
+				}
+			}
       if (window.innerWidth < 992) {
         var currentScrollPos = window.pageYOffset;
         if (prevScrollpos > currentScrollPos) {
@@ -601,7 +609,7 @@ function showSite(id) {
         } else {
           document.getElementById(
             "currentWebsite"
-          ).parentElement.style.top = `${-window.pageYOffset}px`;
+          ).parentElement.style.top = `${-document.body.scrollTop || -document.documentElement.scrollTop}px`;
           // document.getElementById("currentWebsite").parentElement.style.transition = "none"
         }
         prevScrollpos = currentScrollPos;
@@ -627,3 +635,22 @@ socket.on("updateSettings", () => {
 socket.on("addProject", getHashPage)
 
 socket.on("deleteProject",()=>window.location.hash="#/home")
+
+socket.on("retry", () => window.location.reload())
+
+window.addEventListener("keyup", (e) => {
+	if(document.activeElement) {
+		if(e.altKey && e.code === "Slash") {
+			e.preventDefault();
+			document.getElementById("settingsTrigger").click()
+		}
+		if(e.ctrlKey && e.code == "KeyD") {
+			e.preventDefault();
+			window.location.hash = "#/home"
+		}
+		else if(e.code === "Slash") {
+			e.preventDefault();
+			window.location.hash = "#/search"
+		}
+	}
+})

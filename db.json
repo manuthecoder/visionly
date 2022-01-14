@@ -393,9 +393,24 @@
 				"url": "https://smartlist.ga",
 				"description": "Gantt charts",
 				"visions": [
-					{
-						"name": "Build web app"
-					}
+					[
+						"71.VMtGeuG",
+						"Work on app",
+						"app",
+						[
+							2022,
+							1,
+							6
+						],
+						[
+							2022,
+							1,
+							27
+						],
+						null,
+						0,
+						null
+					]
 				]
 			},
 			{

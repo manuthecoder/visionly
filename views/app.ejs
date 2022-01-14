@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<% if(!user.name) {  %>
+<%- include('index.ejs'); %>
+<% } else { 
+%><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -45,7 +48,6 @@
     />
 		<style>
 			#_chart {
-				width: 100%;
 				height: auto !important
 			}
 			.dropdown-list {
@@ -67,7 +69,7 @@
   </head>
   <body class="dark:bg-gray-900">
 
-	<div class="hidden md:flex dark:bg-gray-800 lg:flex flex-col items-center w-16 h-full overflow-hidden text-gray-700 bg-gray-100 top-0 fixed left-0">
+	<div class="hidden md:flex dark:bg-gray-800 lg:flex flex-col items-center w-16 h-full overflow-hidden text-gray-700 bg-gray-100 top-0 fixed left-0 z-10">
 		<a class="flex items-center justify-center mt-3" href="#">
 			<img src="https://i.ibb.co/9wBNgFq/logo-1.png" class="rounded-md w-10 h-10">
 		</a>
@@ -90,6 +92,28 @@
 			<a class="dark:hover:bg-gray-500 dark:text-white flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300 matify:ripple" href="#">
 				<i class="material-icons-round">feedback</i>
 			</a>
+			<div x-data="dialog()" style="z-index:9999">
+	<a class="dark:hover:bg-gray-500 dark:text-white flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300 matify:ripple" x-spread="trigger" href="javascript:void(0)">
+				<i class="material-icons-round">keyboard</i>
+			</a>  
+			<div class="dialog z-100 flex items-center" x-spread="dialog" x-cloak>
+    <div class="dialog-content">
+      <div class="dialog-header">Keyboard shortcuts
+        <button type="button" class="btn btn-light btn-sm btn-icon" aria-label="Close" @click="close"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+      </div>
+      <div class="dialog-body">
+				<p><b>/</b> - Open search</p>
+				<p><b>ALT /</b> - Open settings </p>
+				<p><b>CTRL D</b> - Open dashboard</p>
+				<p><b>Alt (left arrow)</b> - Previous</p>
+				<p><b>Alt (right arrow)</b> - Next</p>
+			</div>
+      <div class="dialog-footer">
+        <button type="button" class="btn btn-light" @click="close">Nice!</button>
+      </div>
+    </div>
+  </div>
+</div>
 			<a class="dark:hover:bg-gray-500 dark:text-white flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-300 matify:ripple" href="javascript:void(0)" onclick="document.documentElement.classList.toggle('dark');localStorage.setItem('dark', (document.documentElement.classList.contains('dark') ? 'true': 'false'));getHashPage();">
 				<i class="material-icons-round">dark_mode</i>
 			</a>
@@ -111,7 +135,7 @@
     <div x-data="dropdown()">
       <div
         :class="{ 'rounded-b-none hover:bg-white rounded-b-none lg:rounded-b-none text-black  hover:text-black md:rounded-b-none sm:rounded-b-none shadow-xl': open }"
-        id="dt" class="bg-theme fixed top-5 z-10 left-0 left-1/2 shadow-lg rounded-lg h-10 text-sm w-64 bg-white hover:bg-theme hover:text-white cursor-pointer matify:ripple flex matify:ripple@light items-center px-3 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
+        id="dt" class="bg-white fixed top-5 z-10 left-0 left-1/2 shadow-lg rounded-lg h-10 text-sm w-64 bg-white hover:bg-theme hover:text-white cursor-pointer matify:ripple flex matify:ripple@light items-center px-3 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
         x-spread="trigger"
       >
         <span id="currentWebsite" class="dark:text-white text-sky-700"style="color:currentColor"
@@ -149,3 +173,4 @@
     <script src="/js/app.js"></script>
   </body>
 </html>
+<% } %>

@@ -10,6 +10,12 @@ var session = require('express-session');
 const axios = require('axios').default;
 const { exec } = require("child_process");
 
+const server = http.createServer((req, res, next) => {
+  //replace stackfame.com with your doamin name
+  res.writeHead(302, {'Location' : 'http://www.visionly.manuthecoder.ml'});
+  res.end();
+});
+
 
 function _generateId(length) {
     var result           = '';
@@ -40,11 +46,16 @@ app.use(sessionMiddleware);
 
 app.set('view engine', 'ejs');
 
-app.get('/', function(req, res) {
+app.get('/login', function(req, res) {
+	if(req.session.name) {res.redirect("/app")}
   res.render('index', {
-    title: 'Page Title',
-    description: 'Page Description',
-    header: 'Page Header'
+  });
+});
+
+
+app.get('/', function(req, res) {
+	if(req.session.name) {res.redirect("/app")}
+  res.render('home', {
   });
 });
 
@@ -89,6 +100,13 @@ io.use((socket, next) => {
 });
 
 io.on('connection', (socket) => {
+	socket.on("*", () => {
+    if (!socket.request.session.name) {
+      console.log("Invalid session!");
+      socket.disconnect();
+    }
+  });
+  if (socket.request.session && socket.request.session.name) {
   const session = socket.request.session;
 	socket.on("fetch_data", data => {
 		fs.readFile('./db.json', function (err, res) {
@@ -240,6 +258,9 @@ io.on('connection', (socket) => {
 	socket.on("fetch_sessinfo", data => {
 			socket.emit('resolve_sessinfo', socket.request.session);
 	})
+	} else {
+    socket.emit("retry", true);
+  }
 });
 
 http.listen(port, () => {
