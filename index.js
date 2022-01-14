@@ -8,7 +8,23 @@ let fs = require('fs')
 var expressLayouts = require('express-ejs-layouts');
 var session = require('express-session');
 const { exec } = require("child_process");
+var minifyHTML = require('express-minify-html');
 
+var minify = require('express-minify');
+app.use(minify());
+
+app.use(minifyHTML({
+    override:      true,
+    exception_url: false,
+    htmlMinifier: {
+        removeComments:            true,
+        collapseWhitespace:        true,
+        collapseBooleanAttributes: true,
+        removeAttributeQuotes:     true,
+        removeEmptyAttributes:     true,
+        minifyJS:                  true
+    }
+}));
 
 function _generateId(length) {
     var result           = '';
